@@ -7,12 +7,7 @@ namespace Models
     {
         [Key]
         public int Id { get; set; }
+
         public string Source { get; set; }
-        public int SourceID { get; set; }
-        [ForeignKey("SourceID")]
-        public Produs Produs { get; set; }
-
-
-
     }
 }

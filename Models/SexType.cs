@@ -9,5 +9,4 @@ namespace Models
         public string Type { get; set; }
 
     }
-
 }
