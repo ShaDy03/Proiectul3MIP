@@ -20,10 +20,9 @@ namespace Models
         [ForeignKey("SexID")]
         public SexType SexType { get; set; }
 
-        public int AdressID { get; set; }
-        [ForeignKey("AdressID")]
-        public Address Adress { get; set; }
+        public int AddressID { get; set; }
 
-        
+        [ForeignKey("AddressID")]
+        public Address Address { get; set; }
     }
 }
