@@ -22,6 +22,7 @@ namespace Models
 
         public int CountryID { get; set; }
 
+
         [ForeignKey("CityID")]
         public City City { get; set; }
 
