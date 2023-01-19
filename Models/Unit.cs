@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Models
 {
@@ -12,6 +7,7 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Type is required!")]
         public string Type { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Models
         [Key]
         public int Id { get; set; }
         
-        [Required(ErrorMessage = "Enter your city where are you frome")]
+        [Required(ErrorMessage = "Name is required!")]
         public string Name { get; set; }
     }
 }

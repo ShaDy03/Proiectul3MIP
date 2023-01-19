@@ -11,6 +11,7 @@ namespace Models
         [Required(ErrorMessage = "Please enter the name of the product")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Price is required!")]
         public double Price { get; set; }
 
         [Required(ErrorMessage = "Please enter your desired quantity")]
@@ -20,6 +21,7 @@ namespace Models
 
         public int BrandID { get; set; }
 
+        [Required(ErrorMessage = "UnitID is required!")]
         public int UnitID { get; set; }
 
         [ForeignKey("ImagesID")]

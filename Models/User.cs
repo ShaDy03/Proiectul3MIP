@@ -17,8 +17,10 @@ namespace Models
         [Required(ErrorMessage = "Enter your password")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "SexID is required!")]
         public int SexID { get; set; }
 
+        [Required(ErrorMessage = "AddressID is required!")]
         public int AddressID { get; set; }
 
         [NotMapped]

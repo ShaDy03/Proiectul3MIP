@@ -14,21 +14,19 @@ namespace Models
         [Required(ErrorMessage = "Please enter your number")]
         public int Number { get; set; }
 
-        [Required(ErrorMessage = "Enter your apartament")]
         public int Apartament { get; set; }
         
         [Required(ErrorMessage = "Please enter your postal code")]
         public int PostalCode { get; set; }
 
-
-        [RegularExpression(@"\\d{10}",
-         ErrorMessage = "The phone number must have 10 characters")]
+        [RegularExpression(@"\\d{10}", ErrorMessage = "The phone number must have 10 characters")]
         public string Telephone { get; set; }
 
+        [Required(ErrorMessage = "CityID is required!")]
         public int CityID { get; set; }
 
+        [Required(ErrorMessage = "CountryID is required!")]
         public int CountryID { get; set; }
-
 
         [ForeignKey("CityID")]
         public City City { get; set; }

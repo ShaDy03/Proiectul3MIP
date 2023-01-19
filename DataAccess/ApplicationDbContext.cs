@@ -10,7 +10,7 @@ namespace DataAccess
             : base(options)
         {  }
 
-        public DbSet<Address> Addresse { get; set; }
+        public DbSet<Address> Address { get; set; }
         public DbSet<Brand> Brand { get; set; }
         public DbSet<City> City { get; set; }
         public DbSet<Country> Country { get; set; }

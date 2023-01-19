@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models
 {
@@ -8,6 +7,7 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Source is required!")]
         public string Source { get; set; }
     }
 }
