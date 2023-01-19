@@ -24,8 +24,9 @@ namespace Proiectul3MIP.Controllers
             return View();
         }
 
-        public IActionResult History()
+        public IActionResult History(User user)
         {
+            var profile = _db.History.GetAll(h => h.UserID  == user.Id);
             return View();
         }
 

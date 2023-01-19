@@ -15,7 +15,7 @@ namespace Proiectul3MIP.Controllers
 
         public IActionResult Profile(int id)
         {
-            var profile = new User(); //TODO: Radu _db.User.GetById(id);
+            var profile = _db.User.GetById(id);
             return View(profile);
         }
     }
