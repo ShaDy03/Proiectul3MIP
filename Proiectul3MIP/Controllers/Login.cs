@@ -8,5 +8,11 @@ namespace Proiectul3MIP.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Register()
+        {
+            return View();
+        }
     }
 }
