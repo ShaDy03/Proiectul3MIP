@@ -8,10 +8,12 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Please enter the name of the product")]
         public string Name { get; set; }
 
         public double Price { get; set; }
 
+        [Required(ErrorMessage = "Please enter your desired quantity")]
         public double Quantity { get; set; } 
 
         public int ImageID { get; set; }
