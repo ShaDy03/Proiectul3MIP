@@ -14,7 +14,7 @@ namespace DataAccess
         public DbSet<Brand> Brand { get; set; }
         public DbSet<City> City { get; set; }
         public DbSet<Country> Country { get; set; }
-        public DbSet<History> HistoryOrder { get; set; }
+        public DbSet<HistoryOrder> HistoryOrder { get; set; }
         public DbSet<Image> Image { get; set; }
         public DbSet<Produs> Produs { get; set; }
         public DbSet<SexType> SexType { get; set; }

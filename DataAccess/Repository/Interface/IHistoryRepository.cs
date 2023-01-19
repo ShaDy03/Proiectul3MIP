@@ -2,6 +2,6 @@
 
 namespace DataAccess.Repository.Interface
 {
-    public interface IHistoryRepository : IRepository<History>
+    public interface IHistoryRepository : IRepository<HistoryOrder>
     {}
 }

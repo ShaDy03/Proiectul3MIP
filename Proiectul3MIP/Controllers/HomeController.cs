@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccess.Repository;
+using DataAccess.Repository.Interface;
+using Microsoft.AspNetCore.Mvc;
+using Models;
+using Models.Enum;
 using Proiectul3MIP.Models;
 using System.Diagnostics;
 
@@ -7,10 +11,12 @@ namespace Proiectul3MIP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWorks _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UnitOfWorks db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -18,7 +24,7 @@ namespace Proiectul3MIP.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult History()
         {
             return View();
         }
