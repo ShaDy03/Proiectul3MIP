@@ -14,5 +14,12 @@ namespace Proiectul3MIP.Controllers
         {
             return View();
         }
+
+        public IActionResult History()
+        {
+            return History();
+        }
+
+       
     }
 }
