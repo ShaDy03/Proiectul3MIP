@@ -2,6 +2,6 @@
 
 namespace DataAccess.Repository.Interface
 {
-    public interface IUserRepository : Repository<User>, IUserRepository
+    public interface IUserRepository : IRepository<User>
     {}
 }
