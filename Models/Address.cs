@@ -8,14 +8,21 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Please enter your street")]
         public string Street { get; set; }
 
+        [Required(ErrorMessage = "Please enter your number")]
         public int Number { get; set; }
 
+        [Required(ErrorMessage = "Enter your apartament")]
         public int Apartament { get; set; }
-
+        
+        [Required(ErrorMessage = "Please enter your postal code")]
         public int PostalCode { get; set; }
 
+
+        [RegularExpression(@"\\d{10}",
+         ErrorMessage = "The phone number must have 10 characters")]
         public string Telephone { get; set; }
 
         public int CityID { get; set; }
