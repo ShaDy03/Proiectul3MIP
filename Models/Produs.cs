@@ -17,9 +17,9 @@ namespace Models
         [Required(ErrorMessage = "Please enter your desired quantity")]
         public double Quantity { get; set; } 
 
-        public int ImageID { get; set; }
+        public int? ImageID { get; set; }
 
-        public int BrandID { get; set; }
+        public int? BrandID { get; set; }
 
         [Required(ErrorMessage = "UnitID is required!")]
         public int UnitID { get; set; }

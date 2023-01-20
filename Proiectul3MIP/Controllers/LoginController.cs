@@ -35,6 +35,16 @@ namespace Proiectul3MIP.Controllers
             return encoderResult;
         }
 
+        public IActionResult LoginNow(string email, string password)
+        {
+            var exist = _db.User.Exist(u => u.Email == email && u.Password == EncoderPassword(password));
+            var id = _db.User.GetFirstOrDefault(u => u.Email == email && u.Password == EncoderPassword(password)).Id;
+            if (exist)
+                return RedirectToAction("Index", "Home", new { id = id });
+            else
+                return BadRequest("User not exists!");
+        }
+
         public IActionResult RegisterNow([FromForm]User user)
         {
             if(!ModelState.IsValid && user.Password == user.ConfirmPassword)

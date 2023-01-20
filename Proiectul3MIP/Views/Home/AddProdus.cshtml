@@ -1,0 +1,114 @@
+﻿@model int
+<style>
+
+    *:focus {
+        outline: none;
+    }
+
+    input {
+        display: block;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        padding: 4px;
+        width: 220px;
+        height: 32px;
+        border: none;
+        border-bottom: 1px solid #AAA;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        transition: 0.2s ease;
+    }
+
+        input:focus {
+            border-bottom: 2px solid #16a085;
+            color: #16a085;
+            transition: 0.2s ease;
+        }
+
+        input[type="submit"] {
+            margin-top: 28px;
+            width: 120px;
+            height: 32px;
+            background: #16a085;
+            border: none;
+            border-radius: 2px;
+            color: #FFF;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: 0.1s ease;
+            cursor: pointer;
+        }
+
+        input:hover,
+        input:focus {
+            opacity: 0.8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            transition: 0.1s ease;
+        }
+
+        input:active {
+            opacity: 1;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            transition: 0.1s ease;
+        }
+
+    button.social-signin {
+        margin-bottom: 20px;
+        width: 220px;
+        height: 36px;
+        border: none;
+        border-radius: 2px;
+        color: #FFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+
+        button.social-signin:hover,
+        button.social-signin:focus {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            transition: 0.2s ease;
+        }
+
+        button.social-signin:active {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            transition: 0.2s ease;
+        }
+
+        button.social-signin.facebook {
+            background: #32508E;
+        }
+
+        button.social-signin.twitter {
+            background: #55ACEE;
+        }
+
+        button.social-signin.google {
+            background: #DD4B39;
+        }
+</style>
+<form asp-controller="Home" asp-action="AddProdusNow">
+    <label name="produs.Name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Full Name" name="produs.Name" required>
+
+    <label name="produs.Price"><b>Price</b></label>
+    <input type="text" placeholder="Enter your email" name="produs.Price" required>
+
+    <label name="produs.Quantity"><b>Quantity</b></label>
+    <input type="text" placeholder="Enter Password" name="produs.Quantity" required>
+
+    <label name="produs.UnitID"><b>Unit</b></label>
+    <select name="produs.UnitID" class="form-select p-1" aria-label="Select Country..." style="width:100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;">
+        <option value="1">Kg</option>
+        <option value="2">Buc</option>
+        <option value="3">Pet</option>
+    </select>
+
+    <label hidden name="userId"><b>userId</b></label>
+    <input hidden disabled type="text" value="@Model" placeholder="Insert your number of house.." name="userId" required>
+
+    <button type="submit">Add Produs</button>
+</form>
