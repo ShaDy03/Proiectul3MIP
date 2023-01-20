@@ -6,10 +6,12 @@ namespace DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
+        internal DbContext Context;
         internal DbSet<T> dbSet;
 
         public Repository(DbContext context)
         {
+            Context = context;
             dbSet = context.Set<T>();
         }
 
@@ -58,6 +60,7 @@ namespace DataAccess.Repository
         public void Add(T entity)
         {
             dbSet.Add(entity);
+            Context.SaveChanges();
         }
         public void Remove(T entity)
         {

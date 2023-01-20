@@ -2,7 +2,6 @@
 using DataAccess.Repository.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Models;
-using Models.Enum;
 using Proiectul3MIP.Models;
 using System.Diagnostics;
 
@@ -13,7 +12,7 @@ namespace Proiectul3MIP.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWorks _db;
 
-        public HomeController(ILogger<HomeController> logger, UnitOfWorks db)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWorks db)
         {
             _logger = logger;
             _db = db;

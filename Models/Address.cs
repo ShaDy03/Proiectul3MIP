@@ -19,7 +19,7 @@ namespace Models
         [Required(ErrorMessage = "Please enter your postal code")]
         public int PostalCode { get; set; }
 
-        [RegularExpression(@"\\d{10}", ErrorMessage = "The phone number must have 10 characters")]
+        [Required(ErrorMessage = "Telephone is required!")]
         public string Telephone { get; set; }
 
         [Required(ErrorMessage = "CityID is required!")]

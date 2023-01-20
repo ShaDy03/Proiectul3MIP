@@ -1,4 +1,6 @@
-﻿<style>
+﻿@using Models;
+@model RegisterDatas;
+<style>
     
 *:focus {
   outline: none;
@@ -15,13 +17,13 @@ body {
 }
 
 #login-box {
-  position: relative;
-  margin: 5% auto;
-  width: 600px;
-  height: 400px;
-  background: #FFF;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    margin: 5% auto;
+    width: 600px;
+    height: 1070px;
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .left {
@@ -31,7 +33,7 @@ body {
   box-sizing: border-box;
   padding: 40px;
   width: 300px;
-  height: 400px;
+  height: contain;
 }
 
 h1 {
@@ -40,8 +42,7 @@ h1 {
   font-size: 28px;
 }
 
-input[type="text"],
-input[type="password"] {
+input {
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -56,8 +57,7 @@ input[type="password"] {
   transition: 0.2s ease;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+input:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
@@ -78,14 +78,14 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus {
+input:hover,
+input:focus {
   opacity: 0.8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
 }
 
-input[type="submit"]:active {
+input:active {
   opacity: 1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
@@ -111,7 +111,7 @@ input[type="submit"]:active {
   box-sizing: border-box;
   padding: 40px;
   width: 300px;
-  height: 400px;
+  height: contain;
   background: url('https://goo.gl/YbktSj');
   background-size: cover;
   background-position: center;
@@ -165,13 +165,58 @@ button.social-signin.google {
 <div id="login-box">
     <div class="left">
         <h1>Sign up</h1>
+        <form asp-controller="Login" asp-action="RegisterNow">
+            <label name="user.Name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Full Name" name="user.Name" required>
 
-        <input type="text" name="username" placeholder="Username" />
-        <input type="text" name="email" placeholder="E-mail" />
-        <input type="password" name="password" placeholder="Password" />
-        <input type="password" name="password2" placeholder="Retype password" />
+            <label name="user.Email"><b>Email</b></label>
+            <input type="email" placeholder="Enter your email" name="user.Email" required>
 
-        <input type="submit" name="signup_submit" value="Sign me up" />
+            <label name="user.Password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="user.Password" required>
+
+            <label name="user.ConfirmPassword"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="user.ConfirmPassword" required>
+
+            <label name="user.Address.Street"><b>Street</b></label>
+            <input type="text" placeholder="Insert your street.." name="user.Address.Street" required>
+
+            <label name="user.Address.Number"><b>Number</b></label>
+            <input type="text" placeholder="Insert your number of house.." name="user.Address.Number" required>
+
+            <label name="user.Address.Apartament"><b>Number Apartment</b></label>
+            <input type="text" placeholder="Insert your number of apartment.." value="0" name="user.Address.Apartament">
+
+            <label name="user.Address.PostalCode"><b>Postal Code</b></label>
+            <input type="text" placeholder="Insert your postalcode.." name="user.Address.PostalCode">
+
+            <label name="user.Address.Telephone"><b>Telephone number</b></label>
+            <input type="text" placeholder="Insert your telephone number.." name="user.Address.Telephone">
+
+            <label name='user.Address.CountryID'><b>Country</b></label>
+            <select name= "user.Address.CountryID" class="form-select p-1" aria-label="Select Country..." style="width:100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;">)
+                @foreach (var country in Model.CountryList)
+                {
+                    <option value='@country.Id'>@country.Name</option>
+                }
+            </select> 
+
+            <label name="user.Address.CityID"><b>City</b></label>
+            <select name="user.Address.CityID" class="form-select p-1" aria-label="Select City..." style="width:100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;">
+                @foreach (var city in Model.CityList)
+                {
+                    <option value='@city.Id'>@city.Name</option>
+                }
+            </select>
+
+            <label name="user.SexID"><b>Email</b></label>
+            <select name="user.SexID" class="form-select p-1" aria-label="Select..." style="width:100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
     </div>
 
     <div class="right">
